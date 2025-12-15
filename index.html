@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Память: Архив Электросвязи 2017-2022</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="game-header">
+            <div class="logo">
+                <div class="logo-icon">📡</div>
+                <h1>Архив <span class="logo-highlight">Электросвязи</span></h1>
+                <div class="logo-subtitle">2017-2022</div>
+            </div>
+            <p class="game-description">Найдите парные обложки журнала и узнайте ключевые события в телекоме</p>
+        </header>
+
+        <div class="game-info">
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-label">ХОДЫ</div>
+                    <div class="stat-value" id="moves">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">ВРЕМЯ</div>
+                    <div class="stat-value" id="timer">00:00</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">НАЙДЕНО</div>
+                    <div class="stat-value"><span id="pairs">0</span>/6</div>
+                </div>
+            </div>
+            
+            <button id="restart-btn" class="btn-restart">
+                <i class="fas fa-redo"></i> Новая игра
+            </button>
+        </div>
+
+        <div class="game-container">
+            <div id="memory-board" class="memory-board">
+                <!-- Карточки будут сгенерированы через JS -->
+            </div>
+        </div>
+
+        <div class="fact-panel" id="fact-panel">
+            <div class="fact-header">
+                <h3><i class="fas fa-info-circle"></i> Факт из архива</h3>
+                <button id="close-fact" class="btn-close">&times;</button>
+            </div>
+            <div class="fact-content">
+                <div class="fact-year" id="fact-year">2019</div>
+                <div class="fact-title" id="fact-title">Запуск 5G в Москве</div>
+                <div class="fact-text" id="fact-text">В 2019 году начались первые коммерческие запуски сетей пятого поколения в столице.</div>
+                <div class="fact-issue" id="fact-issue">Журнал "Электросвязь", №5, 2019</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="hint-btn" class="btn-hint">
+                <i class="fas fa-lightbulb"></i> Подсказка (<span id="hint-count">3</span>)
+            </button>
+            <button id="show-facts-btn" class="btn-facts">
+                <i class="fas fa-book"></i> Все факты
+            </button>
+        </div>
+
+        <div class="win-screen" id="win-screen">
+            <div class="win-content">
+                <div class="win-icon">🏆</div>
+                <h2>Архив синхронизирован!</h2>
+                <p>Вы восстановили все выпуски журнала "Электросвязь" за 2017-2022 гг.</p>
+                
+                <div class="win-stats">
+                    <div class="win-stat">
+                        <div class="win-stat-label">Время</div>
+                        <div class="win-stat-value" id="win-time">00:00</div>
+                    </div>
+                    <div class="win-stat">
+                        <div class="win-stat-label">Ходы</div>
+                        <div class="win-stat-value" id="win-moves">0</div>
+                    </div>
+                    <div class="win-stat">
+                        <div class="win-stat-label">Рейтинг</div>
+                        <div class="win-stat-value" id="win-rating">Эксперт</div>
+                    </div>
+                </div>
+                
+                <div class="win-buttons">
+                    <button id="play-again-btn" class="btn-primary">Играть ещё раз</button>
+                    <button id="view-gallery-btn" class="btn-secondary">
+                        <i class="fas fa-images"></i> Галерея обложек
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="game-footer">
+            <p>Журнал "Электросвязь" • Игра на память с архивными обложками</p>
+            <p class="footer-note">Все обложки защищены авторским правом. Только для некоммерческого использования.</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
